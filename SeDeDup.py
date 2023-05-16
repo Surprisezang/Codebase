@@ -93,6 +93,7 @@ if __name__=="__main__":
         sentences = json.load(fr) 
     for i in range(len(sentences)):
         sentences[i] = sentences[i].strip()
+    sentences = list(set(sentences)) # 先set去重
 
     if first_train: # 第一次train要encode
         model = SentenceTransformer(embedding_path)
